@@ -20,7 +20,7 @@ A PyTorch implementation of the Qwen3 language model built from scratch, featuri
 - **Attention Heads**: 16 query heads, 8 key-value heads
 - **Head Dimension**: 128
 - **Hidden Dimension**: 3072
-- **Max Context Length**: 40,960 tokens
+- **Max Context Length**: 40,96 tokens
 - **Base Frequency**: 1,000,000.0 (for RoPE)
 
 ### Key Components
@@ -115,16 +115,6 @@ print(f"Unique parameters: {unique_params:,}")
 - **Expansion Ratio**: ~3x expansion (1024 → 3072 → 1024)
 - **No Bias**: Bias-free linear layers for efficiency
 
-## Model Statistics
-
-When you run the model, you'll see:
-```
-Total number of parameters: 1,834,671,104
-Total number of unique parameters: 1,679,137,280
-```
-
-The difference accounts for potential weight tying between the embedding layer and the language modeling head.
-
 ## Implementation Notes
 
 1. **Memory Efficiency**: Uses `torch.float32` by default but can be configured for different precisions
@@ -157,12 +147,3 @@ The difference accounts for potential weight tying between the embedding layer a
 
 3. This will output the model architecture and a sample forward pass result.
 
-## License
-
-This implementation is for educational and research purposes. Please ensure compliance with the original Qwen model's license terms if using for commercial applications.
-
-## Contributing
-
-Feel free to submit issues, feature requests, and pull requests to improve this implementation.
-
----
